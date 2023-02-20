@@ -1,0 +1,35 @@
+@url=http://localhost:3000
+###
+GET {{url}}/users
+
+###
+POST  {{url}}/users
+content-type: application/json
+
+{
+    "name": ""
+}
+###
+PUT  {{url}}/users/2
+content-type: application/json
+
+{
+    "name": ""
+}
+
+###
+DELETE {{url}}/users/5
+###
+POST  {{url}}/recipes
+content-type: application/json
+
+{
+    "title":"telur gulung",
+    "ingredients": "telur",
+    "photo": "http://localhost",
+    "users_id":4
+}
+
+###
+
+GET http://localhost:3000/users
