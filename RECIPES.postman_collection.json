@@ -1,0 +1,517 @@
+{
+	"info": {
+		"_postman_id": "87e8d8fe-a0a2-4aa8-9eba-913afae08e57",
+		"name": "RECIPES",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25411812"
+	},
+	"item": [
+		{
+			"name": "GET CATEGORY BY ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/category",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET CATEGORY BY NAME",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/category?search=main",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"category"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "main"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INPUT CATEGORY",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/category?name=fruity2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"category"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "fruity2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE CATEGORY",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/category/25",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"category",
+						"25"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE CATEGORY",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 3,\r\n    \"name\": \"candy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/category/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"category",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET RECIPES DATA",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/recipes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET RECIPES DATA BY ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/recipes/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipes",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET RECIPES DATA BY NAME Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/recipes?search=mie goreng",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipes"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "mie goreng"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET RECIPES DATA BY LIMIT",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/recipes?sortby=created_at&sort=desc&page=1&limit=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipes"
+					],
+					"query": [
+						{
+							"key": "sortby",
+							"value": "created_at"
+						},
+						{
+							"key": "sort",
+							"value": "desc"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST RECIPES DATA",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n \"title\": \"minuman penghilang stress postman\",\r\n \"ingredients\": \"air + ac + duit + postman\",\r\n \"photo\": \"http://localhost\",\r\n \"users_id\": 3,\r\n \"category_id\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/recipes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipes"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "nasi goreng postman",
+							"disabled": true
+						},
+						{
+							"key": "ingredients",
+							"value": "nasi + micin + postman",
+							"disabled": true
+						},
+						{
+							"key": "photo",
+							"value": "http://localhost",
+							"disabled": true
+						},
+						{
+							"key": "users_id",
+							"value": "4",
+							"disabled": true
+						},
+						{
+							"key": "created_at",
+							"value": "null",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE RECIPES DATA",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n\"title\": \"nasi goreng postman\",\r\n\"ingredients\": \"nasi + garam + postman\",\r\n \"photo\": \"http://localhost\",\r\n \"users_id\": 4,\r\n \"category_id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/recipes/22",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipes",
+						"22"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UDDATE RECIPE DATA",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"id\": 3,\r\n\"title\": \"telur postman updated4\",\r\n\"ingredients\": \"telur + postman + updated\",\r\n\"users_id\": 3,\r\n\"category_id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/recipes/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipes",
+						"3"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3",
+							"disabled": true
+						},
+						{
+							"key": "title",
+							"value": "telur postman updated",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET USER",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET USER BY ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET USER BY NAME",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users?search=yosua",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "yosua"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INPUT USER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"revo\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users?name=dandi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "dandi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE USER",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/29",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"29"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE USER",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 18,\r\n    \"name\": \"dynno updated\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"18"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
