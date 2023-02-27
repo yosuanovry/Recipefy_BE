@@ -1,27 +1,34 @@
 const Pool = require("../config/db");
 
-const selectData = (data) => {
-  let {searchBy,search} = data
-  return Pool.query(`SELECT users.id,users.name FROM users WHERE users.${searchBy} ILIKE '%${search}%'`);
+const selectData = () => {
+  return Pool.query(`SELECT * FROM users`);
 };
 
-const insertData = (data) => {
+const insertPhoto = (data) => {
   console.log(data);
-  return Pool.query(`INSERT INTO users(name) VALUES('${data}')`);
+  return Pool.query(`INSERT INTO users(photo) VALUES('${data}')`);
 };
-const selectDataById = (by, data) => {
-  console.log(data);
-  return Pool.query(`SELECT * FROM users WHERE ${by}='${data}'`);
-};
+
+const selectDataById = (id) => {
+  return new Promise((resolve,reject)=>
+  Pool.query(`SELECT * FROM users WHERE id='${id}'`,
+  (err,result)=>{
+    if(!err){
+      resolve(result)
+    } else {
+      reject(err)
+    }
+  }))
+}
 
 const updateData = (id, data) => {
-  console.log(data);
-  return Pool.query(`UPDATE users SET name='${data}' WHERE id=${id}`);
-};
+  let {fullname, photo} = data;
+  return Pool.query(`UPDATE users SET fullname='${fullname}', photo='${photo}' WHERE id='${id}'`);
+}
 
 const deleteUser = (id) => {
   console.log(id);
   return Pool.query(`DELETE FROM users WHERE id=${id}`);
 };
 
-module.exports = { selectData, insertData, selectDataById, updateData, deleteUser };
+module.exports = { selectData, insertPhoto, selectDataById, updateData, deleteUser };

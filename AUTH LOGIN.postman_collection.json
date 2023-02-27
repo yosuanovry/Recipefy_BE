@@ -1,0 +1,588 @@
+{
+	"info": {
+		"_postman_id": "8b59a64c-8598-4d83-a27d-83730feb2b76",
+		"name": "AUTH LOGIN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25411812"
+	},
+	"item": [
+		{
+			"name": "GET RECIPES",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "nasi uduk",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "ingredients",
+							"value": "nasi dan uduk",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						},
+						{
+							"key": "category_id",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/recipes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET RECIPES BY NAME",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "nasi uduk",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "ingredients",
+							"value": "nasi dan uduk",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						},
+						{
+							"key": "category_id",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/recipes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET RECIPES BY ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMxNGEyYTQ4LWE0OWQtNGUyYS1iNDgwLTBiNzRmYTc0YmJhYyIsImVtYWlsIjoieW9zdWF0ZXN0MjM0QHlvcy5zZyIsImZ1bGxuYW1lIjoieW9zdWEiLCJwaG90byI6bnVsbCwidmVyaWYiOjEsIm90cCI6IjU5OTQyMSIsImNyZWF0ZWRfYXQiOm51bGwsImlhdCI6MTY3NzI1MjUxMCwiZXhwIjoxNjc4NTY2NTEwfQ.F2KLF0nVrEW68J-4w5DkBU7u-OvZPWVwdqpFhEYW9Es",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "nasi uduk",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "ingredients",
+							"value": "nasi dan uduk",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						},
+						{
+							"key": "category_id",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/recipes/my-recipes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipes",
+						"my-recipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET RECIPES BY ID&NAME",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMxNGEyYTQ4LWE0OWQtNGUyYS1iNDgwLTBiNzRmYTc0YmJhYyIsImVtYWlsIjoieW9zdWF0ZXN0MjM0QHlvcy5zZyIsImZ1bGxuYW1lIjoieW9zdWEiLCJwaG90byI6bnVsbCwidmVyaWYiOjEsIm90cCI6IjU5OTQyMSIsImNyZWF0ZWRfYXQiOm51bGwsImlhdCI6MTY3NzI1MjUxMCwiZXhwIjoxNjc4NTY2NTEwfQ.F2KLF0nVrEW68J-4w5DkBU7u-OvZPWVwdqpFhEYW9Es",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "nasi uduk",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "ingredients",
+							"value": "nasi dan uduk",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						},
+						{
+							"key": "category_id",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/recipes/my-recipes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipes",
+						"my-recipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST RECIPES",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMxNGEyYTQ4LWE0OWQtNGUyYS1iNDgwLTBiNzRmYTc0YmJhYyIsImVtYWlsIjoieW9zdWF0ZXN0MjM0QHlvcy5zZyIsImZ1bGxuYW1lIjoieW9zdWEiLCJwaG90byI6bnVsbCwidmVyaWYiOjEsIm90cCI6IjU5OTQyMSIsImNyZWF0ZWRfYXQiOm51bGwsImlhdCI6MTY3NzI1MjUxMCwiZXhwIjoxNjc4NTY2NTEwfQ.F2KLF0nVrEW68J-4w5DkBU7u-OvZPWVwdqpFhEYW9Es",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "nasi uduk",
+							"type": "text"
+						},
+						{
+							"key": "ingredients",
+							"value": "nasi + uduk",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "category_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/recipes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE RECIPES",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMxNGEyYTQ4LWE0OWQtNGUyYS1iNDgwLTBiNzRmYTc0YmJhYyIsImVtYWlsIjoieW9zdWF0ZXN0MjM0QHlvcy5zZyIsImZ1bGxuYW1lIjoieW9zdWEiLCJwaG90byI6bnVsbCwidmVyaWYiOjEsIm90cCI6IjU5OTQyMSIsImNyZWF0ZWRfYXQiOm51bGwsImlhdCI6MTY3NzI1MjUxMCwiZXhwIjoxNjc4NTY2NTEwfQ.F2KLF0nVrEW68J-4w5DkBU7u-OvZPWVwdqpFhEYW9Es",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "nasi kuning testing updated",
+							"type": "text"
+						},
+						{
+							"key": "ingredients",
+							"value": "nasi + kuning + testing updated",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "category_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/recipes/45",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipes",
+						"45"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE RECIPES",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMxNGEyYTQ4LWE0OWQtNGUyYS1iNDgwLTBiNzRmYTc0YmJhYyIsImVtYWlsIjoieW9zdWF0ZXN0MjM0QHlvcy5zZyIsImZ1bGxuYW1lIjoieW9zdWEiLCJwaG90byI6bnVsbCwidmVyaWYiOjEsIm90cCI6IjU5OTQyMSIsImNyZWF0ZWRfYXQiOm51bGwsImlhdCI6MTY3NzMzNDMyMSwiZXhwIjoxNjc4NjQ4MzIxfQ.LyuLi9LeucSS8kHTAcEpzZyhu0avFmmAVA55nZBwMCE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "nasi uduk",
+							"type": "text"
+						},
+						{
+							"key": "ingredients",
+							"value": "nasi dan uduk",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/C:/Users/zaR/Downloads/nasi uduk.jpe"
+						},
+						{
+							"key": "category_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/recipes/43",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipes",
+						"43"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET USERS",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "nasi uduk",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "ingredients",
+							"value": "nasi dan uduk",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						},
+						{
+							"key": "category_id",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET USERS BY ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMxNGEyYTQ4LWE0OWQtNGUyYS1iNDgwLTBiNzRmYTc0YmJhYyIsImVtYWlsIjoieW9zdWF0ZXN0MjM0QHlvcy5zZyIsImZ1bGxuYW1lIjoieW9zdWEiLCJwaG90byI6bnVsbCwidmVyaWYiOjEsIm90cCI6IjU5OTQyMSIsImNyZWF0ZWRfYXQiOm51bGwsImlhdCI6MTY3NzI1MjUxMCwiZXhwIjoxNjc4NTY2NTEwfQ.F2KLF0nVrEW68J-4w5DkBU7u-OvZPWVwdqpFhEYW9Es",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "nasi uduk",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "ingredients",
+							"value": "nasi dan uduk",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						},
+						{
+							"key": "category_id",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/my-profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"my-profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE USER PROFILE",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMxNGEyYTQ4LWE0OWQtNGUyYS1iNDgwLTBiNzRmYTc0YmJhYyIsImVtYWlsIjoieW9zdWF0ZXN0MjM0QHlvcy5zZyIsImZ1bGxuYW1lIjoieW9zdWEiLCJwaG90byI6bnVsbCwidmVyaWYiOjEsIm90cCI6IjU5OTQyMSIsImNyZWF0ZWRfYXQiOm51bGwsImlhdCI6MTY3NzI1MjUxMCwiZXhwIjoxNjc4NTY2NTEwfQ.F2KLF0nVrEW68J-4w5DkBU7u-OvZPWVwdqpFhEYW9Es",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "fullname",
+							"value": "YOSUAAAA",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/C:/Users/zaR/Downloads/flowchart_aplikasi.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/update-profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"update-profile"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

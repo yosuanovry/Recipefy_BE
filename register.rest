@@ -1,0 +1,38 @@
+@url=http://localhost:3000
+###
+POST  {{url}}/auth/register
+content-type: application/json
+
+{
+    "email":"yosuatest234@yos.sg",
+    "name":"yosua",
+    "password":"123"
+}
+
+###
+GET {{url}}/recipes
+
+###
+GET http://localhost:3000/auth/otp/6a1bcdf7-2696-46de-bab5-2480c41f7e88/444919
+
+### login tidak berhasil
+
+POST  {{url}}/auth/login
+content-type: application/json
+
+{
+    "email":"yosuatest@yos.sg",
+    "password":"123"
+}
+
+### login berhasil
+
+POST  {{url}}/auth/login
+content-type: application/json
+
+{
+    "email":"fvt18401@nezid.com",
+    "password":"123"
+}
+
+###

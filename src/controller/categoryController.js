@@ -5,7 +5,7 @@ const CategoryController = {
   getDetail: async (req, res, next) => {
     try {
     let id = req.params.id;
-    let result = await selectDataById(id);
+    let result = await selectDataById("id",id);
 
     if(result.rows[0]) {
       res.status(200).json({ status: 200, message: `data found`, data: result.rows})

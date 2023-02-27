@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "9db48724-07a6-4daf-9244-9d80e7478276",
+		"name": "AUTH",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25411812"
+	},
+	"item": [
+		{
+			"name": "AUTH REGISTER",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"xfv43566@omeie.com\",\r\n    \"name\":\"yos yos\",\r\n    \"password\":\"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/register/admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"register",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AUTH OTP",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/auth/otp/d5b930dd-835a-42d4-b573-de0b7bd6019a/866373",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"otp",
+						"d5b930dd-835a-42d4-b573-de0b7bd6019a",
+						"866373"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AUTH LOGIN",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ1YjkzMGRkLTgzNWEtNDJkNC1iNTczLWRlMGI3YmQ2MDE5YSIsImVtYWlsIjoieW9zdWF0ZXN0MUB5b3Muc2ciLCJmdWxsbmFtZSI6Inlvc3VhIGFkbWluIiwicGhvdG8iOm51bGwsInZlcmlmIjoxLCJvdHAiOiI4NjYzNzMiLCJjcmVhdGVkX2F0IjoiMjAyMy0wMi0yNVQyMzo0NToyMi4wNDRaIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc3MzkzOTgyLCJleHAiOjE2Nzg3MDc5ODJ9.THUIdC4ht1dNxKjR58JyflQSsbRL-BPWsBpwyyZtuDc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"xfv43566@omeie.com\",\r\n    \"password\":\"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
