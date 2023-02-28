@@ -1,7 +1,5 @@
 # recipes_w3_backend
 1. Buatlah API dari aplikasi dibawah ini
-https://www.figma.com/file/SUbBTYCq1e4ngRt20lSdqr/Food-Recipe?node-id=0%3A1&t=vz
-OBw5mr1l9Ouinx-1
 Requirements:
 ○ Flowchart Aplikasi
 ○ Minimal 3 Table (recipe, category, users )
