@@ -3,7 +3,9 @@ const Pool = require("../config/db");
 const insertData = (data) => {
   let { ingredients, title, photo, users_id, category_id } = data;
   let time = new Date().toISOString();
-  return Pool.query(`INSERT INTO recipes(title,ingredients,photo,users_id,created_at, category_id) VALUES('${title}','${ingredients}','${photo}','${users_id}','${time}', '${category_id}')`);
+  return Pool.query(
+    `INSERT INTO recipes(title,ingredients,photo,users_id,created_at, category_id) 
+  VALUES('${title}','${ingredients}','${photo}','${users_id}','${time}', '${category_id}')`);
 };
 
 const getDataByName = (data) => {

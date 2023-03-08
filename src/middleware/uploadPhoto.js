@@ -1,5 +1,4 @@
 const multer = require('multer')
-const cloudinary = require('cloudinary').v2;
 
 const storage = multer.diskStorage({
     destination: function(req,file,cb){

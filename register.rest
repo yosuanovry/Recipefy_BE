@@ -1,4 +1,4 @@
-@url=http://localhost:3000
+@url=https://puce-victorious-bandicoot.cyclic.app
 ###
 POST  {{url}}/auth/register
 content-type: application/json

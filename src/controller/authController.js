@@ -1,7 +1,7 @@
-const {findUser,createUser,selectUserById, verifyUser, selectData} = require('./../models/authModel')
+const {findUser,createUser,selectUserById, verifyUser} = require('./../models/authModel')
 const {v4:uuidv4} = require('uuid')
 const argon2 = require('argon2');
-const generateToken = require('../helpers/generateToken')
+const {generateToken, refreshToken} = require('../helpers/generateToken')
 const email = require("../middleware/email")
 
 const UsersController = {
@@ -37,7 +37,7 @@ const UsersController = {
         }
 
         try{
-            let url = `http://${process.env.BASE_URL}:${process.env.PORT}/auth/otp/${id}/${otp}`
+            let url = `https://puce-victorious-bandicoot.cyclic.app/auth/otp/${id}/${otp}`
             let sendEmail =  email(req.body.email,otp,url,req.body.name)
             if(sendEmail == 'email not send'){
                 return res.status(404).json({status:404,message:`register gagal, email tidak terkirim`})                
@@ -66,14 +66,22 @@ const UsersController = {
         delete data.password
 
         let token = generateToken(data)
-        
+        let newToken = refreshToken(data)
+        let key = process.env.JWT_KEY
+
         if(verifyPassword){
             users.token = token
+            users.refreshToken = newToken
             delete users.password
             delete users.otp
             delete users.created_at
 
-            console.log('verif', users.verif)
+            jwt.verify(token, key, (err, user) => {
+                if(err) {
+                    return res.status(403).json({ message: `Token expired, here is the new one ${newToken}`})
+                }
+            })
+
 
             if(data.verif == 0){
                 return res.status(404).json({status:404,message:`login gagal silakan cek email untuk verifikasi user`})   

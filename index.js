@@ -11,12 +11,11 @@ app.use(errorHandler)
 
 const cors = require("cors")
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: '*',
 }))
 
 const port = 3000
 
-console.log(process.env.DB_NAME)
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())

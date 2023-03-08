@@ -1,4 +1,4 @@
-const { insertData, getDataByName, selectData, selectDataById, deleteRecipe, updateData, findUser } = require("../models/recipeModel");
+const { insertData, getDataByName, selectDataById, deleteRecipe, updateData, findUser } = require("../models/recipeModel");
 const cloudinary = require("../config/photo")
 
 const RecipesController = {
@@ -35,7 +35,7 @@ const RecipesController = {
 
   getRecipesById: async(req,res,next) => {
     try {
-      let {searchBy,search,sortBy,sort, id} = req.query
+      let {searchBy,search,sortBy,sort} = req.query
       let data = {
         searchBy: searchBy || 'title',
         search: search || '',
@@ -125,7 +125,7 @@ const RecipesController = {
     data.ingredients = req.body.ingredients;
     data.category_id = req.body.category_id;
 
-    let {rows:[users]} =await findUser(req.payload.id)
+    let {rows:[users]} = await selectDataById(id)
 
     if(!users) {
       res.status(404).json({status:404,message:`this recipe is not owned by you`})

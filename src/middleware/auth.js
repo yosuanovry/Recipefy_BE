@@ -28,7 +28,8 @@ const protect = (req,res,next) => {
         if(error && error.name == 'JsonWebTokenError'){
             return res.status(404). json({status:404,message:`login gagal, invalid token`})       
         } else if(error && error.name == 'TokenExpiredError'){
-            return res.status(404). json({status:404,message:`login gagal, token kadaluarsa`})       
+            res.status(404). json({status:404,message:`login gagal, token kadaluarsa`})
+                   
         } else{
             return res.status(404). json({status:404,message:`login gagal, token tidak aktif, silahkan login`})       
         }
