@@ -67,7 +67,7 @@ const UsersController = {
 
         let token = generateToken(data)
         let newToken = refreshToken(data)
-        let key = process.env.JWT_KEY
+
 
         if(verifyPassword){
             users.token = token
@@ -75,12 +75,6 @@ const UsersController = {
             delete users.password
             delete users.otp
             delete users.created_at
-
-            jwt.verify(token, key, (err, user) => {
-                if(err) {
-                    return res.status(403).json({ message: `Token expired, here is the new one ${newToken}`})
-                }
-            })
 
 
             if(data.verif == 0){
