@@ -22,9 +22,16 @@ const getDataByName = (data) => {
 const selectedDataById = (id) => {
   console.log(id)
   return Pool.query(
-    `SELECT recipes.id,recipes.title,recipes.ingredients,recipes.photo,recipes.users_id,users.email,recipes.created_at as posttime, category.name as category 
-    FROM recipes JOIN category ON recipes.category_id=category.id 
-    JOIN users ON recipes.users_id=users.id
+    `SELECT 
+    recipes.id,
+    recipes.title,
+    recipes.ingredient,
+    recipes.photo,
+    recipes.users_id,
+    users.email as creator,
+    recipes.created_at as posttime, 
+    category.name as category,
+    recipes.category_id
   FROM 
     recipes 
   JOIN 
@@ -32,7 +39,7 @@ const selectedDataById = (id) => {
   JOIN 
     users ON users.id = users_id
   WHERE 
-    recipes.id=${id}` 
+    recipes.id = ${id}` 
   );
 }
 
