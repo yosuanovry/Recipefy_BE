@@ -19,18 +19,11 @@ const getDataByName = (data) => {
   );
 }
 
-const selectDataById = (data) => {
+const selectedDataById = (id) => {
   return Pool.query(
-    `SELECT
-    recipes.id, 
-    recipes.title,
-    recipes.ingredients,
-    recipes.created_at as posttime, 
-    category.name as category,
-    users.name as creator,
-    recipes.photo,
-    recipes.users_id,
-    recipes.category_id
+    `SELECT recipes.id,recipes.title,recipes.ingredients,recipes.photo,recipes.users_id,users.email,recipes.created_at as posttime, category.name as category 
+    FROM recipes JOIN category ON recipes.category_id=category.id 
+    JOIN users ON recipes.users_id=users.id
   FROM 
     recipes 
   JOIN 
@@ -38,7 +31,7 @@ const selectDataById = (data) => {
   JOIN 
     users ON users.id = users_id
   WHERE 
-    recipes.id = '${data}'` 
+    recipes.id = '${id}'` 
   )
 } 
 
@@ -84,4 +77,4 @@ const findUser = (email) => {
 
 
 
-module.exports = { insertData, selectData, deleteRecipe, selectDataById, updateData, getDataByName, findUser };
+module.exports = { insertData, selectData, deleteRecipe, selectedDataById, updateData, getDataByName, findUser };

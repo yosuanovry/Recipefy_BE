@@ -1,4 +1,4 @@
-const { insertData, getDataByName, selectDataById, deleteRecipe, updateData, findUser, selectData } = require("../models/recipeModel");
+const { insertData, getDataByName, selectedDataById, deleteRecipe, updateData, findUser, selectData } = require("../models/recipeModel");
 const cloudinary = require("../config/photo")
 
 const RecipesController = {
@@ -35,11 +35,11 @@ const RecipesController = {
 
   selectDataById: async (req,res,next)=>{
         try {
-            let {id} = req.params
+            let id = req.params.id
 
-            let dataCheck = await selectDataById(id)
+            let result = await selectedDataById(id)
         
-            if(dataCheck.rows[0]){
+            if(result.rows[0]){
                 res.status(200).json({status:200,message:`data recipe found`,data:dataCheck.rows})
             } else {
                 res.status(400).json({status:400,message:`data recipe not found`})
