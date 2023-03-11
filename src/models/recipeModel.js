@@ -19,22 +19,22 @@ const getDataByName = (data) => {
   );
 }
 
-const selectDataById = () => {
+const selectDataById = (data) => {
   return Pool.query(
-    `SELECT 
-    recipes.name,
-    recipes.ingredient,
+    `SELECT
+    recipes.id, 
+    recipes.title,
+    recipes.ingredients,
     recipes.created_at as posttime, 
     category.name as category,
     users.name as creator,
     recipes.photo,
-    recipes.deleted_at as delete_time,
     recipes.users_id,
     recipes.category_id
   FROM 
-    recipe 
+    recipes 
   JOIN 
-    category ON recipe.category_id=category.id
+    category ON recipes.category_id=category.id
   JOIN 
     users ON users.id = users_id
   WHERE 
