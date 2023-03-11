@@ -32,9 +32,9 @@ const selectedDataById = (id) => {
   JOIN 
     users ON users.id = users_id
   WHERE 
-    recipes.id = ${id}` 
-  )
-};
+    recipes.id=${id}` 
+  );
+}
 
 const selectData= (data) => {
   let {searchBy,search,sortBy,sort, limit, offset,id} = data
