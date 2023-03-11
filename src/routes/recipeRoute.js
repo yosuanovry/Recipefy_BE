@@ -7,7 +7,7 @@ const validateFile = require("../middleware/validatePhoto");
 
 router.post("/", protect, upload.single("photo"), validateFile, inputRecipes);
 router.get("/", getRecipesByName);
-router.get("/recipes/:id", getRecipesByName);
+router.get("/recipes/:id", getRecipesById);
 router.get("/my-recipes", protect, getRecipesById);
 router.delete("/:id", protect, deleteRecipes);
 router.put("/:id", protect, upload.single("photo"), validateFile, updateRecipeData);
