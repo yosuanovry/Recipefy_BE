@@ -25,7 +25,7 @@ const selectedDataById = (id) => {
     `SELECT 
     recipes.id,
     recipes.title,
-    recipes.ingredient,
+    recipes.ingredients,
     recipes.photo,
     recipes.users_id,
     users.email as creator,
