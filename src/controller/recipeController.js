@@ -40,7 +40,7 @@ const RecipesController = {
             let result = await selectedDataById(id)
         
             if(result.rows[0]){
-                res.status(200).json({status:200,message:`data recipe found`,data:dataCheck.rows})
+                res.status(200).json({status:200,message:`data recipe found`,data:result.rows})
             } else {
                 res.status(400).json({status:400,message:`data recipe not found`})
             }   
