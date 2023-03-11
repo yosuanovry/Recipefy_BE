@@ -35,7 +35,7 @@ const RecipesController = {
 
   selectDataById: async (req,res,next)=>{
         try {
-            let id = req.params.id
+            let {id} = req.params
 
             let dataCheck = await selectDataById(id)
         
@@ -44,8 +44,8 @@ const RecipesController = {
             } else {
                 res.status(400).json({status:400,message:`data recipe not found`})
             }   
-        } catch (error) {
-            next(error)
+        } catch (err) {
+          return next(res.status(404).json({status: 404, message: err.message }));
         }
     },
 
