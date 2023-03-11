@@ -38,7 +38,7 @@ const selectDataById = (data) => {
   JOIN 
     users ON users.id = users_id
   WHERE 
-    recipes.id = ${data}` 
+    recipes.id = '${data}'` 
   )
 } 
 
