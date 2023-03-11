@@ -20,6 +20,7 @@ const getDataByName = (data) => {
 }
 
 const selectedDataById = (id) => {
+  console.log(id)
   return Pool.query(
     `SELECT recipes.id,recipes.title,recipes.ingredients,recipes.photo,recipes.users_id,users.email,recipes.created_at as posttime, category.name as category 
     FROM recipes JOIN category ON recipes.category_id=category.id 
@@ -31,9 +32,9 @@ const selectedDataById = (id) => {
   JOIN 
     users ON users.id = users_id
   WHERE 
-    recipes.id = '${id}'` 
+    recipes.id = ${id}` 
   )
-} 
+};
 
 const selectData= (data) => {
   let {searchBy,search,sortBy,sort, limit, offset,id} = data
@@ -59,7 +60,7 @@ const deleteRecipe = (id) => {
 const updateData = (id, data) => {
   let { ingredients, title, photo, users_id, category_id} = data;
   return Pool.query(`UPDATE recipes SET ingredients='${ingredients}', title='${title}', photo='${photo}', category_id=${category_id}, users_id='${users_id}' WHERE id='${id}'`);
-}
+};
 
 const findUser = (email) => {
   return new Promise((resolve,reject)=>
@@ -71,7 +72,7 @@ const findUser = (email) => {
       reject(err)
     }
   }))
-}
+};
 
 
 

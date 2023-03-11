@@ -5,8 +5,8 @@ const { protect } = require("../middleware/auth");
 const upload = require("../middleware/uploadPhoto");
 const validateFile = require("../middleware/validatePhoto");
 
+router.get("/:id", selectDataById);
 router.post("/", protect, upload.single("photo"), validateFile, inputRecipes);
-router.get("/recipes/:id", selectDataById);
 router.get("/", getRecipesByName);
 router.get("/my-recipes", protect, getRecipesById);
 router.delete("/:id", protect, deleteRecipes);
