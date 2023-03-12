@@ -141,7 +141,7 @@ const RecipesController = {
     data.ingredients = req.body.ingredients;
     data.category_id = req.body.category_id;
 
-    let {rows:[users]} = await selectDataById(id)
+    let {rows:[users]} = await selectedDataById(id)
 
     if(!users) {
       res.status(404).json({status:404,message:`this recipe is not owned by you`})
