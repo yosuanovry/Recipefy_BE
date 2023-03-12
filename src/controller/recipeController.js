@@ -51,7 +51,6 @@ const RecipesController = {
 
   getRecipesById: async(req,res,next) => {
     try {
-      let id = req.params.id
       let {searchBy,search,sortBy,sort} = req.query
       let data = {
         searchBy: searchBy || 'title',
@@ -65,7 +64,7 @@ const RecipesController = {
       data.limit = Number(req.query.limit) || 10
       data.offset = (data.page - 1) * data.limit
   
-      let result = await selectData(id)
+      let result = await selectData(data)
       
   
       if(!result){
