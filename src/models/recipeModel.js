@@ -11,7 +11,7 @@ const insertData = (data) => {
 const getDataByName = (data) => {
   let {searchBy,search,sortBy,sort, limit, offset} = data
   return Pool.query(
-    `SELECT recipes.id,recipes.title,recipes.ingredients,recipes.photo,recipes.users_id,users.email, users.photo as user_photo, recipes.created_at as posttime, category.name as category 
+    `SELECT recipes.id,recipes.title,recipes.ingredients,recipes.photo,recipes.users_id,users.email, users.photo as user_photo, users.fullname as username, recipes.created_at as posttime, category.name as category 
     FROM recipes JOIN category ON recipes.category_id=category.id 
     JOIN users ON recipes.users_id=users.id 
     WHERE recipes.${searchBy} ILIKE '%${search}%' 
@@ -30,6 +30,7 @@ const selectedDataById = (id) => {
     recipes.users_id,
     users.email as creator,
     users.photo as user_photo,
+    users.fullname as username,
     recipes.created_at as posttime, 
     category.name as category,
     recipes.category_id
@@ -47,12 +48,12 @@ const selectedDataById = (id) => {
 const selectData= (data) => {
   let {searchBy,search,sortBy,sort, limit, offset,id} = data
   return Pool.query(
-    `SELECT recipes.id,recipes.title,recipes.ingredients,recipes.photo,recipes.users_id,users.email,recipes.created_at as posttime, category.name as category, users.photo as user_photo
+    `SELECT recipes.id,recipes.title,recipes.ingredients,recipes.photo,recipes.users_id,users.email,recipes.created_at as posttime, category.name as category, users.photo as user_photo, users.fullname as username
     FROM recipes JOIN category ON recipes.category_id=category.id 
     JOIN users ON recipes.users_id=users.id 
     WHERE recipes.${searchBy} ILIKE '%${search}%' 
     AND recipes.deleted_at IS NULL 
-    AND recipes.users_id='${id}'
+    AND recipes.users_id='${id}'z
     ORDER BY recipes.${sortBy} ${sort} LIMIT ${limit} OFFSET ${offset}`
   )
 };
