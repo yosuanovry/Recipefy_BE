@@ -60,10 +60,10 @@ const UsersController = {
 
   putData: async (req, res, next) => {
     try {
-    const imageUrl = await cloudinary.uploader.upload(req.file.path,{folder:'food'})  
+    const imageUrl = await cloudinary.uploader.upload(req.file.path,{folder:'user'})  
 
     if(!imageUrl) {
-      res.status(404).json({status:404,message:`input data failed, failed to upload photo`})
+      res.status(404).json({status:404,message:`failed to upload photo`})
     }
   
     let data = {};

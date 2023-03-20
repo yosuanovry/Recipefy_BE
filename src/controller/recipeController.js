@@ -55,7 +55,7 @@ const RecipesController = {
       let data = {
         searchBy: searchBy || 'title',
         search: search || '',
-        sortBy: sortBy || 'id',
+        sortBy: sortBy || 'title',
         sort: sort || 'ASC',
         id: req.payload.id
       }
@@ -83,7 +83,7 @@ const RecipesController = {
     let data = {
       searchBy: searchBy || 'title',
       search: search || '',
-      sortBy: sortBy || 'id',
+      sortBy: sortBy || 'title',
       sort: sort || 'ASC',
     }
 
