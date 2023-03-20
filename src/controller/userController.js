@@ -70,6 +70,7 @@ const UsersController = {
     data.fullname = req.body.fullname;
     data.photo = imageUrl.secureUrl;
 
+    console.log(data)
 
     let {rows:[users]} =await selectDataById(req.payload.id)
 
