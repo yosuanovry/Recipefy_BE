@@ -23,6 +23,7 @@ const selectDataById = (id) => {
 
 const updateData = (id, data) => {
   let {fullname, photo} = data;
+  console.log(data)
   return Pool.query(`UPDATE users SET fullname='${fullname}', photo='${photo}' WHERE id='${id}'`);
 }
 
