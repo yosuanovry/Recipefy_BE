@@ -68,7 +68,7 @@ const UsersController = {
   
     let data = {};
     data.fullname = req.body.fullname;
-    data.photo = imageUrl.secureUrl;
+    data.photo = imageUrl.secure_url;
 
     console.log(data)
 
