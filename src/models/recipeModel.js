@@ -53,7 +53,7 @@ const selectData= (data) => {
     JOIN users ON recipes.users_id=users.id 
     WHERE recipes.${searchBy} ILIKE '%${search}%' 
     AND recipes.deleted_at IS NULL 
-    AND recipes.users_id='${id}'z
+    AND recipes.users_id='${id}'
     ORDER BY recipes.${sortBy} ${sort} LIMIT ${limit} OFFSET ${offset}`
   )
 };
