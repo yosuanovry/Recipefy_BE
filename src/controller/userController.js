@@ -1,4 +1,4 @@
-const { selectData, insertPhoto, selectDataById, updateData, deleteUser } = require("../models/userModel");
+const { selectData, insertPhoto, selectDataById, updateData, deleteUser, selectDataByEmail } = require("../models/userModel");
 const cloudinary = require("../config/photo")
 
 const UsersController = {
@@ -23,8 +23,8 @@ const UsersController = {
   getDataByEmail: async (req, res, next) => {
     try{
 
-    let id = req.params.email
-    let showUser = selectDataById(id)
+    let email = req.params.email
+    let showUser = selectDataByEmail(email)
 
     if (showUser.rows[0]) {
       res.status(200).json({ status: 200, message: `data found`, data: showUser.rows });

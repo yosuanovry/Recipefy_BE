@@ -8,7 +8,7 @@ const validateFile = require('../middleware/validatePhoto')
 
 router.get("/", getData);
 router.get("/my-profile", protect, getDetailId);
-router.get("/:id", getDataByEmail);
+router.get("/:email", getDataByEmail);
 router.put("/update-profile", protect, upload.single('photo'), validateFile, putData);
 // router.delete("/:id", deleteData);
 // router.post("/", postData);

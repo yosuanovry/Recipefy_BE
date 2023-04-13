@@ -21,6 +21,18 @@ const selectDataById = (id) => {
   }))
 }
 
+const selectDataByEmail = (email) => {
+  return new Promise((resolve,reject)=>
+  Pool.query(`SELECT * FROM users WHERE email='${email}'`,
+  (err,result)=>{
+    if(!err){
+      resolve(result)
+    } else {
+      reject(err)
+    }
+  }))
+}
+
 const updateData = (id, data) => {
   let {fullname, photo} = data;
   console.log(data)
@@ -32,4 +44,4 @@ const deleteUser = (id) => {
   return Pool.query(`DELETE FROM users WHERE id=${id}`);
 };
 
-module.exports = { selectData, insertPhoto, selectDataById, updateData, deleteUser };
+module.exports = { selectData, insertPhoto, selectDataById, updateData, deleteUser, selectDataByEmail };
