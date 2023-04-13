@@ -22,15 +22,14 @@ const UsersController = {
 
   getDataByEmail: async (req, res, next) => {
     try{
-
     let email = req.params.email
-    let showUser = selectDataByEmail(email)
+    let {rows:[users]} = await selectDataByEmail(email)
 
-    if (showUser.rows[0]) {
-      res.status(200).json({ status: 200, message: `data found`, data: showUser.rows });
+    if (users) {
+      res.status(200).json({ status: 200, message: `email found`, data: users });
     }
     
-    res.status(400).json({ status: 400, message: `data user not found` });
+    res.status(400).json({ status: 400, message: `email not found` });
   } catch(err) {
     next(res.status(404).json({status: 404, message: err.message }));
   }
