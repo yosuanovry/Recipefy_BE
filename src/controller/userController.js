@@ -24,13 +24,13 @@ const UsersController = {
     try{
 
     let id = req.params.email
-    let showUser = selectDataById(id)
-    
-    if (!showUser) {
+    let {rows:[users]} =await selectDataById(id)
+
+    if (!users) {
       res.status(400).json({ status: 400, message: `data user not found` });
     }
 
-    res.status(200).json({ status: 200, message: `data found`, data: showUser.rows });
+    res.status(200).json({ status: 200, message: `data found`, data: users});
   } catch(err) {
     next(res.status(404).json({status: 404, message: err.message }));
   }
