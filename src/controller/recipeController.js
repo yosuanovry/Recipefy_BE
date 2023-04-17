@@ -1,16 +1,15 @@
 const { insertData, getDataByName, selectedDataById, deleteRecipe, updateData, findUser, selectData } = require("../models/recipeModel");
 const cloudinary = require("../config/photo")
+const notif = require("../middleware/notification")
 
 const RecipesController = {
   inputRecipes: async (req, res, next) => {
     try {
     const imageUrl = await cloudinary.uploader.upload(req.file.path,{folder:'food'})
 
-
     if(!imageUrl) {
       return res.status(404).json({status:404,message:`input data failed, failed to upload photo`})
     }
-
 
     let data = {};
     data.title = req.body.title;
@@ -21,12 +20,18 @@ const RecipesController = {
 
     let result = await insertData(data);
 
+    
+    
     if (!result) {
       return res.status(404).json({ status: 404, message: `input data failed` });
+    } else {
+      return (
+        res.status(200).json({ status: 200, message: `input data success ` }),
+        notif(req.body.title, req.payload.id)
+      )
     }
     
-
-   return  res.status(200).json({ status: 200, message: `input data success ` });
+   
   } catch(err) {
 
     return next(res.status(404).json({status: 404, message: err.message }));
